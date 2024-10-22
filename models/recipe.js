@@ -1,5 +1,5 @@
-const createBook = (sequelize, DataTypes) => {
-    const Book = sequelize.define('book', {
+const createRecipe = (sequelize, DataTypes) => {
+    const Recipe = sequelize.define('recipe', {
         id: {
             type: DataTypes.INTEGER,
             autoIncrement: true,
@@ -10,14 +10,13 @@ const createBook = (sequelize, DataTypes) => {
             type: DataTypes.STRING,
             allowNull: false
         },
-
-        author: {
+        ingredients: {
             type: DataTypes.STRING,
             allowNull: false
         },
 
-        price: {
-            type: DataTypes.DECIMAL(10, 2),
+        description: {
+            type: DataTypes.STRING,
             allowNull: false
         },
 
@@ -33,7 +32,7 @@ const createBook = (sequelize, DataTypes) => {
         }
     });
 
-    return Book;
+    return Recipe;
 };
 
-export default createBook;
+export default createRecipe;

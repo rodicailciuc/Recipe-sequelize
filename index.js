@@ -10,11 +10,11 @@ import logger from './middleware/logger.js';
 
 // import routes
 import userRoutes from './routes/user.js';
-import bookRoutes from './routes/book.js';
+import recipeRoutes from './routes/recipe.js';
 
 // load environment variables
 dotenv.config();
-const PORT = process.env.PORT || 5003;
+const PORT = process.env.PORT || 5004;
 
 // construct path
 const __filename = fileURLToPath(import.meta.url);
@@ -40,7 +40,7 @@ app.use(logger);
 
 // use routes
 app.use('/api', userRoutes);
-app.use('/api', bookRoutes);
+app.use('/api', recipeRoutes);
 
 // handle 404
 app.use('*', (req, res) => {

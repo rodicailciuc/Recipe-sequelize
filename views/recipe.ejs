@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Recipe</title>
+</head>
+
+<body>
+    <header>
+        <h1>Recipe</h1>
+        <%- include("./includes/nav.ejs", { token: token }) %>
+    </header>
+    <main>
+        <div class="main-container">
+            <div class="recipes-container">
+                <h2 class="title">Title: <%= recipe.title %></h2>
+                <p class="ingredients">Ingredients: <%= recipe.ingredients %></p>
+                <p class="description">Description: <%= recipe.description %></p>
+                <img class="image" src="<%= recipe.img %>" alt="<%= recipe.title %>">
+                <div class="button-group">
+                    <button class="btn-link">
+                        <a href="/api/recipes">Show Recipes</a>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
